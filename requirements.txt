@@ -1,0 +1,2 @@
+# your mkdocs plugins go here
+mkdocs-multirepo-plugin
