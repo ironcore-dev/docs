@@ -10,7 +10,7 @@ export default withMermaid({
       ['link', { rel: 'icon', href: 'https://raw.githubusercontent.com/ironcore-dev/ironcore/refs/heads/main/docs/assets/logo_borderless.svg' }],
       ['meta', {property: 'og:type', content: 'website'}],
       ['meta', {property: 'og:title', content: 'IronCore Project - Cloud Native Infrastructure Management'}],
-      ['meta', {property: 'og:description', content: 'IronCore is an Open-Source platform designed to empower users by providing a robust Infrastructure as a Service layer, Bare Metal Management and Network Automation'}],
+      ['meta', {property: 'og:description', content: 'IronCore is an Open-Source platform designed to empower users by providing a robust Infrastructure as a Service layer, Bare Metal Management, Network Automation, and AI/Accelerator Infrastructure'}],
       ['meta', {property: 'og:site_name', content: 'IronCore Project'}],
       ['meta', {property: 'og:image', content: 'https://raw.githubusercontent.com/ironcore-dev/ironcore-dev.github.io/refs/heads/main/docs/public/og-ironcore.png'}],
       ['meta', {property: 'og:url', content: 'https://ironcore.dev/'}],
