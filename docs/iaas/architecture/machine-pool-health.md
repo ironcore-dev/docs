@@ -96,6 +96,10 @@ Whenever the probe result changes, the heartbeat nudges the reconciler via an ev
 is updated promptly without waiting for an unrelated reconcile trigger. Condition updates only happen on
 actual changes, so a steady-state pool does not cause continuous status writes.
 
+The one exception to reconciler-only status writes is the `MachinePool` lifecycle controller in the
+`ironcore-controller-manager`: when it judges a pool unresponsive, it patches `Ready=Unknown` directly (see
+next section).
+
 ## Detecting Unresponsive MachinePools
 
 The `MachinePoolLifecycle` controller in the `ironcore-controller-manager` monitors all `MachinePool` objects
