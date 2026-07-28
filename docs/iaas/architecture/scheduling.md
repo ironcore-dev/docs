@@ -53,6 +53,12 @@ assign the correct Pool but does not guarantee that the Machine or Volume will b
 scheduling mechanism described in this [enhancement proposal](https://github.com/ironcore-dev/ironcore/blob/main/docs/proposals/11-scheduling.md)
 should provide a more robust scheduling mechanism in the future.
 
+::: warning
+The scheduler does not account for pool health: even if a `MachinePool` reports `Ready=False` or
+`Ready=Unknown` (see [MachinePool Health](/iaas/architecture/machine-pool-health)), it remains a valid
+scheduling target and `Machine`s will still be assigned to it.
+:::
+
 ## Poollets
 
 The poollet's responsibilities besides announcing the Pool are manifold and are depicted in the diagram below:

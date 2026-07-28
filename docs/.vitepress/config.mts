@@ -93,6 +93,13 @@ export default withMermaid({
                 { text: 'Overview', link: '/iaas/architecture/' },
                 { text: 'Scheduling and Orchestration', link: '/iaas/architecture/scheduling' },
                 { text: 'Runtime Interface', link: '/iaas/architecture/runtime-interface' },
+                {
+                  text: 'Pools and Lifecycle',
+                  collapsed: true,
+                  items: [
+                    { text: 'MachinePool Health', link: '/iaas/architecture/machine-pool-health' },
+                  ],
+                },
                 { text: 'Networking', link: '/iaas/architecture/networking' },
                 { text: 'Operating System Images', link: '/iaas/architecture/os-images' },
             ],
