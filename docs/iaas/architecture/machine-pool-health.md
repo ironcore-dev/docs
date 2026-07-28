@@ -1,5 +1,10 @@
 # MachinePool Health
 
+::: info Since ironcore v0.5.0
+The `MachinePool` heartbeat and `Ready` condition mechanism described on this page was introduced in
+ironcore v0.5.0.
+:::
+
 To determine the availability and health of a `MachinePool`, IronCore implements a heartbeat and status
 condition mechanism modeled after the Kubernetes node heartbeat design. It allows operators, the scheduler,
 and higher-level automation to tell at a glance whether a `MachinePool` and its `machinepoollet` are able to
@@ -7,7 +12,6 @@ serve workloads — without having to probe the pool by trial and error.
 
 The mechanism is specified in [IEP-15: Pool Health](https://github.com/ironcore-dev/enhancements/blob/main/ieps/15-pool-health.md)
 and involves two parties:
-
 1. **The `machinepoollet`**, which regularly reports its health by renewing a `Lease` object and by
    propagating a `Ready` condition onto the `MachinePool`'s `.status.conditions`.
 2. **The `MachinePool` lifecycle controller** in the IronCore control plane (`ironcore-controller-manager`),
