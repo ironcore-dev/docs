@@ -18,11 +18,6 @@ and involves two parties:
    which watches the `MachinePool`s and their leases and marks a pool's `Ready` condition as `Unknown` if the
    `machinepoollet` stops reporting.
 
-::: info
-Health reporting is currently only implemented for `MachinePool`. The `VolumePool` and `BucketPool` types
-are not covered by this mechanism.
-:::
-
 ## Heartbeating via Leases
 
 For every `MachinePool`, the `machinepoollet` acquires and keeps a
