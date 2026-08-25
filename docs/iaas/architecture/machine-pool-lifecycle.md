@@ -60,7 +60,7 @@ pre-drain hook and the controller takes over:
    ```
 
    `NoSchedule` stops new machines from landing on the pool while it is draining; `NoExecute`
-   triggers [eviction](/iaas/architecture/machine-pool-eviction) of every bound `Machine` that does
+   triggers [eviction](/iaas/architecture/machine-eviction) of every bound `Machine` that does
    not tolerate the taint.
 3. It checks whether any non-tolerating `Machine`s are still bound to the pool. As long as some
    remain, it **holds the pre-drain hook** and requeues. The node stays up while VMs shut down
