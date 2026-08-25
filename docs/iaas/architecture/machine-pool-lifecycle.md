@@ -1,7 +1,9 @@
-# MachinePool Lifecycle
+# CAPI-based MachinePool Lifecycle
 
-The `pool-lifecycle-controller` coordinates [Cluster API](https://cluster-api.sigs.k8s.io/) (CAPI)
-node deletion with graceful eviction of the IronCore `Machine`s running on the affected pool.
+This page describes MachinePool lifecycle management for [Cluster API](https://cluster-api.sigs.k8s.io/)
+(CAPI) based cluster setups. The generic drain primitive it relies on the taint-based eviction that
+works independently of CAPI and is documented in [Machine Eviction](/iaas/architecture/machine-eviction).
+
 A CAPI compute node backs an IronCore `MachinePool`, and the IronCore VMs of that pool run on it.
 So when CAPI replaces or deletes such a node for instance during a rolling upgrade or scale-down, 
 deleting it while those VMs are still running would drop their workloads. This
@@ -18,7 +20,7 @@ matches the `MachinePool` name.
 
 ## The Pre-Drain Hook
 
-CAPI supports [pre-drain lifecycle hooks](https://cluster-api.sigs.k8s.io/tasks/experimental-features/lifecycle-hooks):
+CAPI supports [pre-drain lifecycle hooks](https://cluster-api.sigs.k8s.io/reference/api/labels-and-annotations.html?highlight=pre-drain.delete.hook.machine.cluster.x-k8s.io#supported-annotations):
 an annotation on a CAPI `Machine` that pauses deletion before the node is drained until the
 annotation is removed. The controller uses this to interpose IronCore eviction.
 
