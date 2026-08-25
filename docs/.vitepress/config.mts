@@ -98,6 +98,7 @@ export default withMermaid({
                   collapsed: true,
                   items: [
                     { text: 'MachinePool Health', link: '/iaas/architecture/machine-pool-health' },
+                    { text: 'MachinePool Lifecycle', link: '/iaas/architecture/machine-pool-lifecycle' },
                   ],
                 },
                 { text: 'Networking', link: '/iaas/architecture/networking' },
