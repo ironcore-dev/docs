@@ -116,10 +116,6 @@ lifecycle controller detects the change and the poollet resumes publishing `Read
 This mirrors the Kubernetes node lifecycle controller behavior and provides the foundation for subsequent
 features like pool rolling and workload eviction, which rely on accurate pool health information.
 
-::: warning
-The IronCore scheduler currently does **not** consider the `Ready` condition when placing `Machine`s on a `MachinePool`.
-Workloads can therefore still be assigned to an unhealthy pool, where they remain unprocessed until the `machinepoollet` recovers.
-:::
 
 ## Configuration and Defaults
 
