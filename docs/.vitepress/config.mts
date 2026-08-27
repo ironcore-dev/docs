@@ -112,7 +112,15 @@ export default withMermaid({
           items: [
             { text: 'Overview', link: '/iaas/architecture/providers/' },
             { text: 'Brokers', link: '/iaas/architecture/providers/brokers' },
-            { text: 'libvirt-provider', link: '/iaas/architecture/providers/libvirt-provider' },
+            {
+              text: 'libvirt-provider',
+              collapsed: true,
+              items: [
+                { text: 'Overview', link: '/iaas/architecture/providers/libvirt-provider' },
+                { text: 'Console', link: '/iaas/architecture/providers/libvirt-provider/console' },
+                { text: 'Ignition', link: '/iaas/architecture/providers/libvirt-provider/ignition' },
+              ],
+            },
             { text: 'ceph-provider', link: '/iaas/architecture/providers/ceph-provider' },
           ],
         },
